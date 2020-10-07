@@ -40,7 +40,7 @@ public class NewMoveadRotate : MonoBehaviour
             V3_move_direction.y -= fl_gravity * Time.deltaTime;
 
         }
-      /*  if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0)
         {
             targetRot.y = targetRot.y - 90;
         }
@@ -56,7 +56,7 @@ public class NewMoveadRotate : MonoBehaviour
         {
             targetRot.y = 0;
         }
-        transform.eulerAngles = targetRot;*/
+        transform.eulerAngles = targetRot;
 
         cc_Reference_To_Character_Controller.Move(V3_move_direction);
 
