@@ -833,6 +833,11 @@ PrefabInstance:
       propertyPath: soundScript
       value: 
       objectReference: {fileID: 1457235956}
+    - target: {fileID: 2894436852338575094, guid: bbf01121caec86447a5f1a39379bceb1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3151791872365597679, guid: bbf01121caec86447a5f1a39379bceb1,
         type: 3}
       propertyPath: m_Mesh
@@ -5724,7 +5729,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-9474
+  m_Name: pb_Mesh-1232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
