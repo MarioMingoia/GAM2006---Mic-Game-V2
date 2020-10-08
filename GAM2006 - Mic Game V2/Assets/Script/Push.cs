@@ -48,11 +48,6 @@ public class Push : MonoBehaviour
     {
         if (other.gameObject.tag == "Boulders")
         {
-
-            if (objecttoPush == null)
-            {
-                objecttoPush = other.gameObject.transform;
-            }
             objecttoPush = other.gameObject.transform;
 
             inTriger = true;
