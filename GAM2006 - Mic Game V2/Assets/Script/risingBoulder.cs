@@ -27,10 +27,10 @@ public class risingBoulder : MonoBehaviour
                 incCount++;
             }
 
-           /* if (incCount == 8)
+            if (incCount == 5)
             {
                 risingCount = 1;
-            }*/
+            }
         }
     }
 }

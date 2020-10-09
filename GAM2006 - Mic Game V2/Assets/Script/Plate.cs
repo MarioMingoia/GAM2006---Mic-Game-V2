@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Plate : MonoBehaviour
@@ -37,6 +38,18 @@ public class Plate : MonoBehaviour
             if (!boulder.Contains(other.gameObject))
             {
                 boulder.Add(this.gameObject);
+                boulder = boulder.Distinct().ToList();
+            }
+        }
+    } 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Boulders")
+        {
+            if (!boulder.Contains(other.gameObject))
+            {
+                boulder.Remove(this.gameObject);
+
             }
         }
     }
