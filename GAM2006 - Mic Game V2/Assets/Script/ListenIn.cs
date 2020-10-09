@@ -57,31 +57,20 @@ public class ListenIn : MonoBehaviour
         float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
         //For Debugging
         // Debug.Log(level);
-
-        // Blocked out for the time being
-        /*
-            if (level>sensitivity && !doIt){
-                DoIt ();
-                doIt = true;
-            }
-            if (level<sensitivity && doIt)
-            {
-
-                doIt = false;
-            }
-
-         */
         // Show the input level on screen
         level = level * 10;
         ourLevel = level;
 
         myText.text = level.ToString();
-        void DoIt()
+
+        if (level >= 2)
         {
-
-
+            myText.GetComponent<Text>().color = Color.red;
         }
-
+        if (level < 2)
+        {
+            myText.GetComponent<Text>().color = Color.blue;
+        }
 
     }
 }

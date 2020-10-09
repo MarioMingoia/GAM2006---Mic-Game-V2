@@ -27,8 +27,9 @@ public class risingBoulder : MonoBehaviour
                 incCount++;
             }
 
-            if (incCount == 5)
+            if (incCount == 4)
             {
+                this.GetComponent<risingBoulder>().enabled = false;
                 risingCount = 1;
             }
         }

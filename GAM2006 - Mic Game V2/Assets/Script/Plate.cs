@@ -37,20 +37,9 @@ public class Plate : MonoBehaviour
         {
             if (!boulder.Contains(other.gameObject))
             {
-                boulder.Add(this.gameObject);
+                boulder.Add(other.gameObject);
                 boulder = boulder.Distinct().ToList();
             }
         }
     } 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Boulders")
-        {
-            if (!boulder.Contains(other.gameObject))
-            {
-                boulder.Remove(this.gameObject);
-
-            }
-        }
-    }
 }

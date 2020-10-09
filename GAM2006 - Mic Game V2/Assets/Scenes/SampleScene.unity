@@ -299,7 +299,6 @@ GameObject:
   - component: {fileID: 117820116}
   - component: {fileID: 117820115}
   - component: {fileID: 117820114}
-  - component: {fileID: 117820113}
   m_Layer: 0
   m_Name: Boulders (5)
   m_TagString: Boulders
@@ -307,22 +306,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!54 &117820113
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117820112}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &117820114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -334,7 +317,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &117820115
 BoxCollider:
@@ -363,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &117820117
 MonoBehaviour:
@@ -634,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117820112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.98, y: 19.17, z: -27.62}
+  m_LocalPosition: {x: 78.98, y: 19.17, z: -27.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1797,9 +1782,9 @@ GameObject:
   - component: {fileID: 396148967}
   - component: {fileID: 396148966}
   - component: {fileID: 396148965}
+  - component: {fileID: 396148969}
   - component: {fileID: 396148964}
   - component: {fileID: 396148963}
-  - component: {fileID: 396148969}
   - component: {fileID: 396148962}
   - component: {fileID: 396148961}
   m_Layer: 0
@@ -1824,7 +1809,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &396148962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1836,7 +1821,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &396148963
 BoxCollider:
@@ -1865,6 +1850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &396148965
 MonoBehaviour:
@@ -2969,7 +2956,6 @@ GameObject:
   - component: {fileID: 599567985}
   - component: {fileID: 599567984}
   - component: {fileID: 599567983}
-  - component: {fileID: 599567982}
   m_Layer: 0
   m_Name: Boulders (3)
   m_TagString: Boulders
@@ -2977,22 +2963,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!54 &599567982
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599567981}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &599567983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3004,7 +2974,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &599567984
 BoxCollider:
@@ -3033,6 +3003,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &599567986
 MonoBehaviour:
@@ -3871,7 +3843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.44080108, y: 0, z: 0, w: 0.8976048}
-  m_LocalPosition: {x: 68.9, y: 50, z: -62.3}
+  m_LocalPosition: {x: 59.1, y: 52.9, z: -70.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6045,7 +6017,6 @@ GameObject:
   - component: {fileID: 1053730980}
   - component: {fileID: 1053730979}
   - component: {fileID: 1053730978}
-  - component: {fileID: 1053730977}
   m_Layer: 0
   m_Name: Boulders (2)
   m_TagString: Boulders
@@ -6053,22 +6024,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!54 &1053730977
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053730976}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1053730978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6080,7 +6035,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &1053730979
 BoxCollider:
@@ -6109,6 +6064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &1053730981
 MonoBehaviour:
@@ -6380,7 +6337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053730976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61, y: 19.17, z: -38.59}
+  m_LocalPosition: {x: 56.55, y: 19.17, z: -38.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8391,7 +8348,6 @@ GameObject:
   - component: {fileID: 1232169713}
   - component: {fileID: 1232169712}
   - component: {fileID: 1232169711}
-  - component: {fileID: 1232169710}
   m_Layer: 0
   m_Name: Boulders (6)
   m_TagString: Boulders
@@ -8399,22 +8355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!54 &1232169710
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232169709}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1232169711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8426,7 +8366,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &1232169712
 BoxCollider:
@@ -8455,6 +8395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &1232169714
 MonoBehaviour:
@@ -8892,7 +8834,6 @@ GameObject:
   - component: {fileID: 1629211998}
   - component: {fileID: 1629212003}
   - component: {fileID: 1629212002}
-  - component: {fileID: 1629211997}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -8900,19 +8841,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1629211997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629211996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1}
-  m_Center: {x: 0.5, y: 0.25, z: -0.5}
 --- !u!114 &1629211998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9183,8 +9111,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629211996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.08, y: 19.14, z: -16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 42.46, y: 19.14, z: -15.55}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -9200,7 +9128,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
   m_Center: {x: 0.5, y: 0.57, z: -0.5}
 --- !u!114 &1629212003
 MonoBehaviour:
@@ -9231,7 +9159,6 @@ GameObject:
   - component: {fileID: 1709044222}
   - component: {fileID: 1709044221}
   - component: {fileID: 1709044220}
-  - component: {fileID: 1709044219}
   m_Layer: 0
   m_Name: Boulders (4)
   m_TagString: Boulders
@@ -9239,22 +9166,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!54 &1709044219
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709044218}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1709044220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9266,7 +9177,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!65 &1709044221
 BoxCollider:
@@ -9295,6 +9206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!114 &1709044223
 MonoBehaviour:
@@ -9566,7 +9479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709044218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.77, y: 19.17, z: -27.62}
+  m_LocalPosition: {x: 71.77, y: 19.17, z: -27.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9898,6 +9811,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundScript: {fileID: 1457235956}
   inTriger: 0
+  levelisHigh: 0
+  moveSpeed: 0
   player: {fileID: 0}
 --- !u!65 &1794052290
 BoxCollider:
@@ -9910,7 +9825,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 3.5, y: 2, z: 3.5}
   m_Center: {x: 1, y: 1, z: -1}
 --- !u!54 &1794052291
 Rigidbody:
@@ -9927,7 +9842,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!43 &1867501700
 Mesh:
   m_ObjectHideFlags: 0
