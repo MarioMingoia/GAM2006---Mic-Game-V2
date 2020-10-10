@@ -13,6 +13,7 @@ public class ListenIn : MonoBehaviour
     public Text myText;
 
     public float ourLevel;
+    public Slider powerLevelSldr;
     void Awake()
     {
         //init microphone input
@@ -32,6 +33,9 @@ public class ListenIn : MonoBehaviour
         {
             Debug.Log("Name: " + device);
         }
+
+        powerLevelSldr.minValue = 0;
+        powerLevelSldr.maxValue = 10;
     }
 
     // Update is called once per frame
@@ -62,6 +66,8 @@ public class ListenIn : MonoBehaviour
         ourLevel = level;
 
         myText.text = level.ToString();
+
+        powerLevelSldr.value = level;
 
         if (level >= 2)
         {

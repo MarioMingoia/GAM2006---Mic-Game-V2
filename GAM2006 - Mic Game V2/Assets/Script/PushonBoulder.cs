@@ -21,11 +21,11 @@ public class PushonBoulder : MonoBehaviour
     {
         moveSpeed = soundScript.GetComponent<ListenIn>().ourLevel;
 
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 2)
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 1)
         {
             levelisHigh = true;
         }
-        if (soundScript.GetComponent<ListenIn>().ourLevel < 2)
+        if (soundScript.GetComponent<ListenIn>().ourLevel < 1)
         {
             levelisHigh = false;
         }
@@ -60,6 +60,23 @@ public class PushonBoulder : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             inTriger = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        float force = 10;
+
+        // If the object we hit is the enemy
+        if (collision.gameObject.tag == "Wall")
+        {
+            // Calculate Angle Between the collision point and the player
+            Vector3 dir = collision.contacts[0].point - transform.position;
+            // We then get the opposite (-Vector3) and normalize it
+            dir = -dir.normalized;
+            // And finally we add force in the direction of dir and multiply it by force. 
+            // This will push back the player
+            GetComponent<Rigidbody>().AddForce(dir * force);
         }
     }
 

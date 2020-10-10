@@ -323,8 +323,11 @@ GameObject:
   - component: {fileID: 1101850281023575154}
   - component: {fileID: 1101850281023575162}
   - component: {fileID: 1101850281023575157}
+  - component: {fileID: 5291292842277588286}
+  - component: {fileID: 7218021969711735805}
   - component: {fileID: 790097466039739130}
   - component: {fileID: 6620875278238040170}
+  - component: {fileID: 8566526046045064006}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -442,6 +445,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5291292842277588286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101850281023575117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ad87fcd541a0e4481809bd17e809c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundScript: {fileID: 0}
+  pullBoulder: {fileID: 0}
+--- !u!114 &7218021969711735805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101850281023575117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3f5e06f3458de44ab55a594f4bf77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundScript: {fileID: 0}
+  boulderRB: {fileID: 0}
+  countdown: 0
 --- !u!114 &790097466039739130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,3 +529,16 @@ MonoBehaviour:
   AirMovementSpeed: 3
   fl_gravity: 15
   fallMultiplier: 2
+--- !u!65 &8566526046045064006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101850281023575117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 1.75, z: 3}
