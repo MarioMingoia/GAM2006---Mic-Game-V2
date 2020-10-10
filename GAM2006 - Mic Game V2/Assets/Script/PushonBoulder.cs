@@ -19,6 +19,7 @@ public class PushonBoulder : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        player.GetComponent<BoxCollider>().enabled = false;
         moveSpeed = soundScript.GetComponent<ListenIn>().ourLevel;
 
         if (soundScript.GetComponent<ListenIn>().ourLevel >= 1)

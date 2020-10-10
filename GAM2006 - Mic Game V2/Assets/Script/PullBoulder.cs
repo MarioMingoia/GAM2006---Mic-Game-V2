@@ -16,7 +16,8 @@ public class PullBoulder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 1)
+        this.GetComponent<BoxCollider>().enabled = true;
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 2)
         {
             Vector3 targetx;
             targetx.x = this.transform.position.x;
