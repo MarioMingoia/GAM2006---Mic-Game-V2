@@ -5,9 +5,8 @@ using UnityEngine;
 public class FreezeBoulder : MonoBehaviour
 {
     public GameObject soundScript;
-
-    public Rigidbody boulderRB;
     public float countdown;
+    public Rigidbody boulderRB;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,32 +17,25 @@ public class FreezeBoulder : MonoBehaviour
     void Update()
     {
         this.GetComponent<BoxCollider>().enabled = true;
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 2)
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 3)
         {
-            if (boulderRB != null)
-            {
-                boulderRB.useGravity = false;
-            }          
+            countdown = soundScript.GetComponent<ListenIn>().ourLevel * 15;
         }
-        if (boulderRB == null)
+        if (countdown >= 2)
         {
-            boulderRB.useGravity = true;
+            countdown -= Time.deltaTime;
+            boulderRB.constraints = RigidbodyConstraints.FreezeAll;
+
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boulders")
+        if (other.gameObject.tag == "FallingBoulder")
         {
+            print("freeze");
             boulderRB = other.gameObject.GetComponent<Rigidbody>();
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Boulders")
-        {
-            boulderRB = null;
-        }
-    }
 }

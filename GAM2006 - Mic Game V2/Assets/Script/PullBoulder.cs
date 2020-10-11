@@ -17,7 +17,7 @@ public class PullBoulder : MonoBehaviour
     void Update()
     {
         this.GetComponent<BoxCollider>().enabled = true;
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 2)
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 3)
         {
             Vector3 targetx;
             targetx.x = this.transform.position.x;

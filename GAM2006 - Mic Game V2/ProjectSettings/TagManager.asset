@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boulders
   - Wall
+  - KillPlayer
+  - FallingBoulder
   layers:
   - Default
   - TransparentFX

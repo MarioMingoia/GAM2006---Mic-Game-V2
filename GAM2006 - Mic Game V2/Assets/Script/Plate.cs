@@ -10,10 +10,12 @@ public class Plate : MonoBehaviour
     public static bool risingThings;
     public List<GameObject> boulder;
 
+
     // Start is called before the first frame update
     void Start()
     {
         
+
     }
 
     // Update is called once per frame
@@ -29,6 +31,8 @@ public class Plate : MonoBehaviour
             removeWall.SetActive(false);
         }
 
+        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,5 +45,7 @@ public class Plate : MonoBehaviour
                 boulder = boulder.Distinct().ToList();
             }
         }
+
+        
     } 
 }

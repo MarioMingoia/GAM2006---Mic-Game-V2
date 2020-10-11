@@ -38,7 +38,6 @@ public class MouseController : MonoBehaviour
             print("left");
 
         }
-
         else if (Input.GetMouseButtonDown(1))
         {
             count++;
