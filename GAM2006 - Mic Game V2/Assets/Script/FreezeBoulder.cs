@@ -19,7 +19,7 @@ public class FreezeBoulder : MonoBehaviour
         this.GetComponent<BoxCollider>().enabled = true;
         if (soundScript.GetComponent<ListenIn>().ourLevel >= 3)
         {
-            countdown = soundScript.GetComponent<ListenIn>().ourLevel * 15;
+            countdown = soundScript.GetComponent<ListenIn>().ourLevel * 5;
         }
         if (countdown >= 2)
         {
@@ -31,7 +31,7 @@ public class FreezeBoulder : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "FallingBoulder")
+        if (other.gameObject.tag == "Boulders")
         {
             print("freeze");
             boulderRB = other.gameObject.GetComponent<Rigidbody>();
