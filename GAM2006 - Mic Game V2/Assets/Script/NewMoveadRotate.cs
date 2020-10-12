@@ -69,7 +69,6 @@ public class NewMoveadRotate : MonoBehaviour
         _temp_direction.z = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
         V3_move_direction = gameObject.transform.TransformDirection(_temp_direction);
     }
-
 }
 
 

@@ -45,7 +45,5 @@ public class Plate : MonoBehaviour
                 boulder = boulder.Distinct().ToList();
             }
         }
-
-        
     } 
 }

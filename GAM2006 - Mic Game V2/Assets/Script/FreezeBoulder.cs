@@ -33,7 +33,6 @@ public class FreezeBoulder : MonoBehaviour
     {
         if (other.gameObject.tag == "Boulders")
         {
-            print("freeze");
             boulderRB = other.gameObject.GetComponent<Rigidbody>();
         }
     }

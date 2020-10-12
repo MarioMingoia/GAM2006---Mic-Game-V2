@@ -69,11 +69,11 @@ public class ListenIn : MonoBehaviour
 
         powerLevelSldr.value = level;
 
-        if (level >= 2)
+        if (level >= 4)
         {
             myText.GetComponent<Text>().color = Color.red;
         }
-        if (level < 2)
+        if (level < 4)
         {
             myText.GetComponent<Text>().color = Color.blue;
         }

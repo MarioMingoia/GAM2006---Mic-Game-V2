@@ -64,9 +64,18 @@ public class PushonBoulder : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            
+            GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        float force = 10;
+        float force = 30;
 
         // If the object we hit is the enemy
         if (collision.gameObject.tag == "Wall")
@@ -78,6 +87,7 @@ public class PushonBoulder : MonoBehaviour
             // And finally we add force in the direction of dir and multiply it by force. 
             // This will push back the player
             GetComponent<Rigidbody>().AddForce(dir * force);
+            print("wall");
         }
     }
 
@@ -86,6 +96,12 @@ public class PushonBoulder : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             inTriger = false;
+        }
+
+        if (other.gameObject.tag == "Wall")
+        {
+
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 }

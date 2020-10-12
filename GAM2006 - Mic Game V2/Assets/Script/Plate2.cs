@@ -9,6 +9,8 @@ public class Plate2 : MonoBehaviour
     public Rigidbody fallBoulder1rb;
     public GameObject fallBoulder2;
     public Rigidbody fallBoulder2rb;
+    public GameObject fallBoulder3;
+    public Rigidbody fallBoulder3rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class Plate2 : MonoBehaviour
         fallBoulder1rb.constraints = RigidbodyConstraints.FreezeAll;
         fallBoulder2rb = fallBoulder2.GetComponent<Rigidbody>();
         fallBoulder2rb.constraints = RigidbodyConstraints.FreezeAll;
+        fallBoulder3rb = fallBoulder3.GetComponent<Rigidbody>();
+        fallBoulder3rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class Plate2 : MonoBehaviour
         {
             fallBoulder1rb.constraints = ~RigidbodyConstraints.FreezePositionY;
             fallBoulder2rb.constraints = ~RigidbodyConstraints.FreezePositionY;
+            fallBoulder3rb.constraints = ~RigidbodyConstraints.FreezePositionY;
         }
     }
 
