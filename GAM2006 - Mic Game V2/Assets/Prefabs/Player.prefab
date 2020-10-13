@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 790097466039739130}
   - component: {fileID: 4825763367675232296}
   - component: {fileID: 6620875278238040170}
-  - component: {fileID: 2571186975596112199}
+  - component: {fileID: 5652216180265531598}
   - component: {fileID: 8566526046045064006}
   m_Layer: 0
   m_Name: Player
@@ -546,7 +546,7 @@ MonoBehaviour:
   AirMovementSpeed: 3
   fl_gravity: 15
   fallMultiplier: 2
---- !u!114 &2571186975596112199
+--- !u!114 &5652216180265531598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ea498e8d553864092554f3cbceeccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
+  Main: {fileID: 0}
   pullCam: {fileID: 0}
 --- !u!65 &8566526046045064006
 BoxCollider:
