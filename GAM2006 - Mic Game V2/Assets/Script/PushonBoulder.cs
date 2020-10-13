@@ -20,11 +20,12 @@ public class PushonBoulder : MonoBehaviour
     void FixedUpdate()
     {
         player.GetComponent<BoxCollider>().enabled = false;
-        moveSpeed = soundScript.GetComponent<ListenIn>().ourLevel;
 
         if (soundScript.GetComponent<ListenIn>().ourLevel >= 1)
         {
             levelisHigh = true;
+            moveSpeed = soundScript.GetComponent<ListenIn>().ourLevel;
+
         }
         if (soundScript.GetComponent<ListenIn>().ourLevel < 1)
         {
@@ -35,22 +36,18 @@ public class PushonBoulder : MonoBehaviour
         {
             if (player.transform.eulerAngles.y == 0 || player.transform.eulerAngles.y == 360 || player.transform.eulerAngles.y == -360)
             {
-               // transform.Translate(0, 0, soundScript.GetComponent<ListenIn>().ourLevel);
                 transform.Translate(0, 0, moveSpeed * Time.deltaTime);
             }
             else if (player.transform.eulerAngles.y == 180)
             {
-               // transform.Translate(0, 0, -soundScript.GetComponent<ListenIn>().ourLevel);
                 transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
             }
             else if (player.transform.eulerAngles.y == 90 || player.transform.eulerAngles.y == -270)
             {
-                //transform.Translate(soundScript.GetComponent<ListenIn>().ourLevel, 0, 0);
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             }
             else if (player.transform.eulerAngles.y == 270 || player.transform.eulerAngles.y == -90)
             {
-               // transform.Translate(-soundScript.GetComponent<ListenIn>().ourLevel, 0, 0);
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
             }
         }
@@ -67,8 +64,7 @@ public class PushonBoulder : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Wall")
-        {
-            
+        {          
             GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
         }
     }

@@ -30,6 +30,7 @@ public class Plate2 : MonoBehaviour
             fallBoulder1rb.constraints = ~RigidbodyConstraints.FreezePositionY;
             fallBoulder2rb.constraints = ~RigidbodyConstraints.FreezePositionY;
             fallBoulder3rb.constraints = ~RigidbodyConstraints.FreezePositionY;
+            startFalling = false;
         }
     }
 
