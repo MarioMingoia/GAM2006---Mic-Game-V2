@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 
 public class MouseController : MonoBehaviour
@@ -11,6 +12,10 @@ public class MouseController : MonoBehaviour
     public MonoBehaviour pullScript;
 
     public int count;
+
+    public RawImage freeze;
+    public RawImage pull;
+    public RawImage push;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +26,7 @@ public class MouseController : MonoBehaviour
         }
 
         freezeScript = GameObject.FindGameObjectWithTag("Player").GetComponent<FreezeBoulder>();
-        freezeScript.enabled = false;
         pullScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PullBoulder>();
-        pullScript.enabled = false;
         }
 
     // Update is called once per frame
@@ -59,6 +62,9 @@ public class MouseController : MonoBehaviour
             }
             pullScript.enabled = false;
             freezeScript.enabled = false;
+            push.enabled = true;
+            pull.enabled = false;
+            freeze.enabled = false;
 
         }
         else if (count ==2)
@@ -71,6 +77,9 @@ public class MouseController : MonoBehaviour
             }
             pullScript.enabled = true;
             freezeScript.enabled = false;
+            push.enabled = false;
+            pull.enabled = true;
+            freeze.enabled = false;
         }
         else if (count == 3)
         {
@@ -82,6 +91,9 @@ public class MouseController : MonoBehaviour
             }
             pullScript.enabled = false;
             freezeScript.enabled = true;
+            push.enabled = false;
+            pull.enabled = false;
+            freeze.enabled = true;
         }
         if (count == 4)
         {
