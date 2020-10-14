@@ -37,12 +37,12 @@ public class FreezeBoulder : MonoBehaviour
 
         }
 
-        else if (countdown == 0)
+        else if (countdown <= 0)
         {
             foreach (Rigidbody a in boulderRB)
             {
                 a.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY;
-                print("freeze");
+                print("unfreeze");
             }
         }
        

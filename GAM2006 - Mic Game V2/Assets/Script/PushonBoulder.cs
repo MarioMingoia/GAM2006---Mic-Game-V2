@@ -97,7 +97,7 @@ public class PushonBoulder : MonoBehaviour
         if (other.gameObject.tag == "Wall")
         {
 
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         }
     }
 }
