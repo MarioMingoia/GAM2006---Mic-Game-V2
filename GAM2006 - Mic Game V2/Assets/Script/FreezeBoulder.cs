@@ -10,7 +10,7 @@ public class FreezeBoulder : MonoBehaviour
     public float countdown;
     public List<Rigidbody> boulderRB;
 
-    public bool inTrigger;
+    public bool active;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +21,14 @@ public class FreezeBoulder : MonoBehaviour
     void Update()
     {
         GetComponent<BoxCollider>().enabled = true;
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 3)
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 3 && active == false)
         {
-            countdown = soundScript.GetComponent<ListenIn>().ourLevel * 5;
+            countdown = soundScript.GetComponent<ListenIn>().ourLevel * 2;
         }
         if (countdown >= 0)
         {
             countdown -= Time.deltaTime;
-
+            active = true;
             foreach (Rigidbody a in boulderRB)
             {
                 a.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
@@ -39,10 +39,12 @@ public class FreezeBoulder : MonoBehaviour
 
         else if (countdown <= 0)
         {
+            active = false;
             foreach (Rigidbody a in boulderRB)
             {
                 a.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY;
                 print("unfreeze");
+                boulderRB.Remove(a);
             }
         }
        

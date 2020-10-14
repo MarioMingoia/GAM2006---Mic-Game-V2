@@ -9,6 +9,7 @@ public class PushonBoulder : MonoBehaviour
     public bool levelisHigh;
     public float moveSpeed;
     public GameObject player;
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +18,16 @@ public class PushonBoulder : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         player.GetComponent<BoxCollider>().enabled = false;
 
-        if (soundScript.GetComponent<ListenIn>().ourLevel >= 1)
+        if (soundScript.GetComponent<ListenIn>().ourLevel >= 1.0f)
         {
             levelisHigh = true;
             moveSpeed = soundScript.GetComponent<ListenIn>().ourLevel;
-
         }
-        if (soundScript.GetComponent<ListenIn>().ourLevel < 1)
+        if (soundScript.GetComponent<ListenIn>().ourLevel < 1.0f)
         {
             levelisHigh = false;
         }
@@ -36,19 +36,22 @@ public class PushonBoulder : MonoBehaviour
         {
             if (player.transform.eulerAngles.y == 0 || player.transform.eulerAngles.y == 360 || player.transform.eulerAngles.y == -360)
             {
-                transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
             }
             else if (player.transform.eulerAngles.y == 180)
             {
-                transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
+                transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
+
             }
             else if (player.transform.eulerAngles.y == 90 || player.transform.eulerAngles.y == -270)
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.Translate(-Vector3.left * moveSpeed * Time.deltaTime);
+
             }
             else if (player.transform.eulerAngles.y == 270 || player.transform.eulerAngles.y == -90)
             {
-                transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
             }
         }
     }
@@ -71,7 +74,7 @@ public class PushonBoulder : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        float force = 30;
+        float force = 30.0f;
 
         // If the object we hit is the enemy
         if (collision.gameObject.tag == "Wall")
